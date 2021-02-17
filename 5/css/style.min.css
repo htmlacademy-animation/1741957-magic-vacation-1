@@ -2535,35 +2535,40 @@ img {
     .rules__item {
       padding-left: 5rem;
       font-size: 1.2rem; } }
-  .rules__item::before {
-    content: counter(li);
-    counter-increment: li;
+  .rules__item .rules__circle-text,
+  .rules__item .rules__circle {
     position: absolute;
     top: 0;
     left: 0;
     width: 4.5rem;
-    height: 4.5rem;
-    font-family: "Radical", "Arial", sans-serif;
-    font-weight: 400;
-    font-size: 2.4rem;
-    background-color: #a67ee5;
-    border-radius: 50%;
-    line-height: 5rem;
-    text-align: center; }
+    height: 4.5rem; }
     @media (max-width: 1024px) and (orientation: portrait) {
-      .rules__item::before {
+      .rules__item .rules__circle-text,
+      .rules__item .rules__circle {
         top: 1rem;
         width: 2.5rem;
         height: 2.5rem;
         line-height: 3rem;
         font-size: 1.4rem; } }
     @media (max-width: 768px) and (orientation: landscape) {
-      .rules__item::before {
+      .rules__item .rules__circle-text,
+      .rules__item .rules__circle {
         top: 0.6rem;
         width: 2.5rem;
         height: 2.5rem;
         line-height: 3rem;
         font-size: 1.4rem; } }
+  .rules__item .rules__circle {
+    background-color: #a67ee5;
+    border-radius: 50%;
+    transform: scale(0); }
+  .rules__item .rules__circle-text {
+    font-family: "Radical", "Arial", sans-serif;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 5rem;
+    text-align: center;
+    opacity: 0; }
   .rules__item p {
     margin: 0;
     transform: translateX(40px);
@@ -2572,8 +2577,14 @@ img {
       .rules__item p {
         min-height: calc(1.4rem * 2.2); } }
 
-.rules__item:nth-child(1)::before {
-  transform: scale(0);
+.rules__item:nth-child(1) .rules__circle-text {
+  animation: rulesCircleText 1s forwards 0.5s; }
+
+@keyframes rulesCircleText {
+  to {
+    opacity: 1; } }
+
+.rules__item:nth-child(1) .rules__circle {
   animation: rulesCircleAnimation cubic-bezier(0.41, 0.28, 0.13, 1.5) 0.5s forwards;
   animation-delay: 0.2s; }
 
@@ -2590,8 +2601,14 @@ img {
     transform: translateX(0);
     opacity: 1; } }
 
-.rules__item:nth-child(2)::before {
-  transform: scale(0);
+.rules__item:nth-child(2) .rules__circle-text {
+  animation: rulesCircleText 1s forwards 0.5s; }
+
+@keyframes rulesCircleText {
+  to {
+    opacity: 1; } }
+
+.rules__item:nth-child(2) .rules__circle {
   animation: rulesCircleAnimation cubic-bezier(0.41, 0.28, 0.13, 1.5) 0.5s forwards;
   animation-delay: 0.4s; }
 
@@ -2608,8 +2625,14 @@ img {
     transform: translateX(0);
     opacity: 1; } }
 
-.rules__item:nth-child(3)::before {
-  transform: scale(0);
+.rules__item:nth-child(3) .rules__circle-text {
+  animation: rulesCircleText 1s forwards 0.5s; }
+
+@keyframes rulesCircleText {
+  to {
+    opacity: 1; } }
+
+.rules__item:nth-child(3) .rules__circle {
   animation: rulesCircleAnimation cubic-bezier(0.41, 0.28, 0.13, 1.5) 0.5s forwards;
   animation-delay: 0.6s; }
 
@@ -2626,8 +2649,14 @@ img {
     transform: translateX(0);
     opacity: 1; } }
 
-.rules__item:nth-child(4)::before {
-  transform: scale(0);
+.rules__item:nth-child(4) .rules__circle-text {
+  animation: rulesCircleText 1s forwards 0.5s; }
+
+@keyframes rulesCircleText {
+  to {
+    opacity: 1; } }
+
+.rules__item:nth-child(4) .rules__circle {
   animation: rulesCircleAnimation cubic-bezier(0.41, 0.28, 0.13, 1.5) 0.5s forwards;
   animation-delay: 0.8s; }
 
@@ -2654,7 +2683,7 @@ img {
 
 @keyframes rulesLink {
   to {
-    width: 140px; } }
+    width: 18rem; } }
   .rules__link span {
     opacity: 0;
     animation: rulesLinkText 0.3s forwards 1s; }
