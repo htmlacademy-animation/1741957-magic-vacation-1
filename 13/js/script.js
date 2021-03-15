@@ -10769,7 +10769,7 @@ const animateTimer = (duration, timerElementSec, timerElementMin) => {
   const endTime = Date.now() + duration;
 
   function formatTime(time) {
-    return ("0" + Math.floor(time)).slice(-2);
+    return (`0` + Math.floor(time)).slice(-2);
   }
 
   let memoMinutes;
@@ -10778,7 +10778,7 @@ const animateTimer = (duration, timerElementSec, timerElementMin) => {
     const remainingTime = endTime - Date.now();
     const seconds = formatTime((remainingTime / MS_PER_SEC) % SEC_PER_MINUTE);
     const minutes = formatTime(
-      (remainingTime / MS_PER_SEC / SEC_PER_MINUTE) % MINUTES_PER_HOUR
+        (remainingTime / MS_PER_SEC / SEC_PER_MINUTE) % MINUTES_PER_HOUR
     );
 
     if (minutes !== memoMinutes) {
@@ -10788,7 +10788,9 @@ const animateTimer = (duration, timerElementSec, timerElementMin) => {
     timerElementSec.innerHTML = seconds;
 
     if (remainingTime >= MS_PER_SEC) {
-      requestAnimationFrame(calcTime);
+      setTimeout(() => {
+        requestAnimationFrame(calcTime);
+      }, 1000);
     }
   };
 
@@ -10842,67 +10844,67 @@ Object(_modules_social_js__WEBPACK_IMPORTED_MODULE_7__["default"])();
 const fullPageScroll = new _modules_full_page_scroll__WEBPACK_IMPORTED_MODULE_8__["default"]();
 fullPageScroll.init();
 
-const body = document.querySelector("body");
+const body = document.querySelector(`body`);
 body.onload = () => {
-  body.classList.add("loaded");
+  body.classList.add(`loaded`);
 };
 
-//Add text animation
+// Add text animation
 const animationIntroTitle = new _modules_animations_js__WEBPACK_IMPORTED_MODULE_9__["AnimateLetters"](
-  `.intro__title`,
-  1000,
-  `active`,
-  `transform`
+    `.intro__title`,
+    1000,
+    `active`,
+    `transform`
 );
 setTimeout(() => {
   animationIntroTitle.runAnimation();
 }, 500);
 
 const animationIntroDate = new _modules_animations_js__WEBPACK_IMPORTED_MODULE_9__["AnimateLetters"](
-  `.intro__date`,
-  500,
-  `active`,
-  `transform`
+    `.intro__date`,
+    500,
+    `active`,
+    `transform`
 );
 setTimeout(() => {
   animationIntroDate.runAnimation();
 }, 1000);
 
 const animationPrizeTitle = new _modules_animations_js__WEBPACK_IMPORTED_MODULE_9__["AnimateLetters"](
-  `.prizes__title`,
-  500,
-  `active`,
-  `transform`
+    `.prizes__title`,
+    500,
+    `active`,
+    `transform`
 );
 setTimeout(() => {
   animationPrizeTitle.runAnimation();
 }, 500);
 
 const animationStoryTitle = new _modules_animations_js__WEBPACK_IMPORTED_MODULE_9__["AnimateLetters"](
-  `.slider__item-title`,
-  500,
-  `active`,
-  `transform`
+    `.slider__item-title`,
+    500,
+    `active`,
+    `transform`
 );
 setTimeout(() => {
   animationStoryTitle.runAnimation();
 }, 500);
 
 const animationRulesTitle = new _modules_animations_js__WEBPACK_IMPORTED_MODULE_9__["AnimateLetters"](
-  `.rules__title`,
-  500,
-  `active`,
-  `transform`
+    `.rules__title`,
+    500,
+    `active`,
+    `transform`
 );
 setTimeout(() => {
   animationRulesTitle.runAnimation();
 }, 500);
 
 const animationGameTitle = new _modules_animations_js__WEBPACK_IMPORTED_MODULE_9__["AnimateLetters"](
-  `.game__title`,
-  500,
-  `active`,
-  `transform`
+    `.game__title`,
+    500,
+    `active`,
+    `transform`
 );
 setTimeout(() => {
   animationGameTitle.runAnimation();
